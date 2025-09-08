@@ -3,8 +3,14 @@ name: CI Pipeline
 on: [push, pull_request]
 
 jobs:
- build:   # indent sai (phải thụt 2 spaces)
-   runs-on: ubuntu-latest
-   steps:
-   - uses: actions/checkout@v3
-   - run: echo "Build success"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Build success"
+
+  test:
+    # thiếu runs-on
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Run test cases"
